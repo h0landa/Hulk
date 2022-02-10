@@ -8,5 +8,4 @@ def reduzir_imagem(input_dir, output_dir):
     imagem.save(os.path.join(output_dir, lista_de_arquivos[0]), quality=25)
 
 if __name__ == "__main__":
-    diretorio = '/home/arthur/Documentos/GitHub/h0landa/Hulk/input'
-    reduzir_imagem(diretorio,'input')
+    reduzir_imagem('input','input')
