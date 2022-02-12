@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(158, 255, 55);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="buscar">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -29,7 +29,7 @@
     <string>Buscar</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="caminho">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -57,7 +57,7 @@ border-color: rgb(255, 255, 255);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="redimensionar">
       <property name="text">
        <string>Redimensionar</string>
       </property>
@@ -65,7 +65,7 @@ border-color: rgb(255, 255, 255);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QProgressBar" name="progressBar">
+  <widget class="QProgressBar" name="barra_de_progresso">
    <property name="geometry">
     <rect>
      <x>130</x>

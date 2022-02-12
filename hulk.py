@@ -19,13 +19,13 @@ class Ui_Dialog(object):
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(500, 200)
         Dialog.setStyleSheet(u"background-color: rgb(158, 255, 55);")
-        self.buscar = QPushButton(Dialog)
-        self.buscar.setObjectName(u"buscar")
-        self.buscar.setGeometry(QRect(340, 30, 141, 28))
-        self.caminho = QLineEdit(Dialog)
-        self.caminho.setObjectName(u"caminho")
-        self.caminho.setGeometry(QRect(20, 30, 311, 28))
-        self.caminho.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.pushButton = QPushButton(Dialog)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(340, 30, 141, 28))
+        self.lineEdit = QLineEdit(Dialog)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(20, 30, 311, 28))
+        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(255, 255, 255);")
         self.verticalLayoutWidget = QWidget(Dialog)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
@@ -33,15 +33,15 @@ class Ui_Dialog(object):
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.redimensionar = QPushButton(self.verticalLayoutWidget)
-        self.redimensionar.setObjectName(u"redimensionar")
+        self.pushButton_2 = QPushButton(self.verticalLayoutWidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
 
-        self.verticalLayout.addWidget(self.redimensionar)
+        self.verticalLayout.addWidget(self.pushButton_2)
 
-        self.barra_de_progresso = QProgressBar(Dialog)
-        self.barra_de_progresso.setObjectName(u"barra_de_progresso")
-        self.barra_de_progresso.setGeometry(QRect(130, 80, 241, 23))
-        self.barra_de_progresso.setValue(24)
+        self.progressBar = QProgressBar(Dialog)
+        self.progressBar.setObjectName(u"progressBar")
+        self.progressBar.setGeometry(QRect(130, 80, 241, 23))
+        self.progressBar.setValue(24)
 
         self.retranslateUi(Dialog)
 
@@ -50,8 +50,8 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Hulk", None))
-        self.buscar.setText(QCoreApplication.translate("Dialog", u"Buscar", None))
-        self.caminho.setPlaceholderText(QCoreApplication.translate("Dialog", u" Caminho:", None))
-        self.redimensionar.setText(QCoreApplication.translate("Dialog", u"Redimensionar", None))
+        self.pushButton.setText(QCoreApplication.translate("Dialog", u"Buscar", None))
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("Dialog", u" Caminho:", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Redimensionar", None))
     # retranslateUi
 
