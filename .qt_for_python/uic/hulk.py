@@ -41,7 +41,8 @@ class Ui_Dialog(object):
         self.barra_de_progresso = QProgressBar(Dialog)
         self.barra_de_progresso.setObjectName(u"barra_de_progresso")
         self.barra_de_progresso.setGeometry(QRect(130, 80, 241, 23))
-        self.barra_de_progresso.setValue(24)
+        self.barra_de_progresso.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.barra_de_progresso.setValue(0)
 
         self.retranslateUi(Dialog)
 
