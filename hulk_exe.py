@@ -22,7 +22,7 @@ class MainWindow(QDialog, Ui_Dialog):
     def reduzir_imagem(self):
         image_path = self.caminho.text()
         image_file = Image.open(image_path)
-        image_file.save(image_path, quality = 10)
+        image_file.save(image_path, quality = 5)
         timer = QTimer(self)
         timer.timeout.connect(self.cronometro)
         timer.start(30)
