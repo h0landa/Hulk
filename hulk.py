@@ -1,57 +1,43 @@
-# -*- coding: utf-8 -*-
+import sys
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog, QProgressBar
+from PyQt5.uic import loadUi
+from main import Ui_Dialog
+from PyQt5.QtCore import QTimer
+import os
+from PIL import Image
+from pip import main
 
-################################################################################
-## Form generated from reading UI file 'hulk.ui'
-##
-## Created by: Qt User Interface Compiler version 5.15.2
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
+class MainWindow(QDialog, Ui_Dialog):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        loadUi("hulk.ui", self)
+        self.buscar.clicked.connect(self.browsefiles)
+        self.redimensionar.clicked.connect(self.reduzir_imagem)
+        self.barra_de_progresso.setMaximum(100)
+        self.barra_de_progresso.setValue(0)
+    def browsefiles(self):
+        fname = QFileDialog.getOpenFileName(self, 'Open file', '/')
+        self.caminho.setText(fname[0])
+    def reduzir_imagem(self):
+        image_path = self.caminho.text()
+        image_file = Image.open(image_path)
+        image_file.save(image_path, quality = 5)
+        timer = QTimer(self)
+        timer.timeout.connect(self.cronometro)
+        timer.start(30)
+        
+    def cronometro(self):
+        self.barra_de_progresso.setValue(self.barra_de_progresso.value() + 1)
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+        
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(500, 200)
-        Dialog.setStyleSheet(u"background-color: rgb(158, 255, 55);")
-        self.pushButton = QPushButton(Dialog)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(340, 30, 141, 28))
-        self.lineEdit = QLineEdit(Dialog)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(20, 30, 311, 28))
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"border-color: rgb(255, 255, 255);")
-        self.verticalLayoutWidget = QWidget(Dialog)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(20, 100, 471, 80))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_2 = QPushButton(self.verticalLayoutWidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        
 
-        self.verticalLayout.addWidget(self.pushButton_2)
 
-        self.progressBar = QProgressBar(Dialog)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(130, 80, 241, 23))
-        self.progressBar.setValue(24)
-
-        self.retranslateUi(Dialog)
-
-        QMetaObject.connectSlotsByName(Dialog)
-    # setupUi
-
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Hulk", None))
-        self.pushButton.setText(QCoreApplication.translate("Dialog", u"Buscar", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("Dialog", u" Caminho:", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Redimensionar", None))
-    # retranslateUi
-
+app = QApplication(sys.argv)
+mainwindow = MainWindow()
+widget = mainwindow
+widget.show()
+sys.exit(app.exec_())
