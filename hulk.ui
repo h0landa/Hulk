@@ -25,6 +25,9 @@
      <height>28</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
     <string>Buscar</string>
    </property>
@@ -58,6 +61,9 @@ border-color: rgb(255, 255, 255);</string>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="redimensionar">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Redimensionar</string>
       </property>

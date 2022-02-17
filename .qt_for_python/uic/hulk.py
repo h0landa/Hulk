@@ -22,6 +22,7 @@ class Ui_Dialog(object):
         self.buscar = QPushButton(Dialog)
         self.buscar.setObjectName(u"buscar")
         self.buscar.setGeometry(QRect(340, 30, 141, 28))
+        self.buscar.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.caminho = QLineEdit(Dialog)
         self.caminho.setObjectName(u"caminho")
         self.caminho.setGeometry(QRect(20, 30, 311, 28))
@@ -35,6 +36,7 @@ class Ui_Dialog(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.redimensionar = QPushButton(self.verticalLayoutWidget)
         self.redimensionar.setObjectName(u"redimensionar")
+        self.redimensionar.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
         self.verticalLayout.addWidget(self.redimensionar)
 
